@@ -7,8 +7,6 @@ import Nav from './components/Nav.tsx'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Nav />
-
     <App />
-    
   </StrictMode>,
 )

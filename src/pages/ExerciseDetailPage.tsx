@@ -52,52 +52,51 @@ export function ExerciseDetailPage() {
 
   if (notFound || !exercise) {
     return (
-      <div className="space-y-3">
-        <h1 className="text-2xl font-semibold">Exercise not found</h1>
-        <p className="opacity-70">The exercise id “{id}” does not exist.</p>
-        <Link to="/exercises" className="btn btn-primary btn-sm">
-          Back to Exercises
-        </Link>
+      <div className="grid place-items-center  mt-18">
+        <div className="card w-full max-w-md  shadow-[0_10px_50px_rgba(0,0,0,0.15)]
+ rounded-2xl">
+          <div className="card-body">
+            <h2 className="card-title">Exercise not found!!!</h2>
+            <p>The exercise id “{id}” does not exist.</p>
+            <Link to="/exercises" className="btn btn-primary btn-sm">
+              Back to Exercises
+            </Link>
+          </div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="space-y-4">
-      <div className="flex items-start justify-between gap-3">
-        <div>
+    <div className="grid place-items-center  mt-16">
+      <div className=" w-full max-w-md  shadow-[0_10px_50px_rgba(0,0,0,0.15)]
+ rounded-2xl">
+        <div className="card-body">
           <h1 className="text-2xl font-semibold">{exercise.name}</h1>
           <p className="opacity-70">{formatDate(exercise.date)}</p>
-        </div>
-        <Link to="/exercises" className="btn btn-sm">
-          Back
-        </Link>
-      </div>
 
-      <div className="card bg-base-200">
-        <div className="card-body space-y-3">
-          <div>
-            <h2 className="font-semibold">Notes</h2>
-            <p className="opacity-80">{exercise.notes}</p>
+          <h2 className="font-semibold">Notes</h2>
+          <p className="opacity-80">{exercise.notes}</p>
+
+          <h2 className="font-semibold">Categories</h2>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {exercise.categories.map((c) => (
+              <CategoryBadge key={c.id} category={c} />
+            ))}
           </div>
 
-          <div>
-            <h2 className="font-semibold">Categories</h2>
-            <div className="flex flex-wrap gap-2 mt-2">
-              {exercise.categories.map((c) => (
-                <CategoryBadge key={c.id} category={c} />
-              ))}
-            </div>
+          <h2 className="font-semibold ">Fields</h2>
+          <div className="mt-2 ">
+            <ExerciseFieldList fields={exercise.fields} />
           </div>
 
-          <div>
-            <h2 className="font-semibold">Fields</h2>
-            <div className="mt-2">
-              <ExerciseFieldList fields={exercise.fields} />
-            </div>
-          </div>
+          <Link to="/exercises" className="btn btn-primary btn-sm">
+            Back
+          </Link>
         </div>
       </div>
+
+      
     </div>
   );
 }

@@ -63,13 +63,9 @@ export function ExerciseListPage() {
   return (
     <>
     <div className="space-y-4">
-      {/* <div className="flex items-center justify-between gap-2">
-        <h1 className="text-2xl font-semibold">Exercises</h1>
-      </div> */}
-
-      {/* Filters */}
-      <div className="card bg-base-200">
-        <div className="card-body">
+      
+      <div className="card  m-8">
+        <div className="card-body max-w-7xl mx-auto flex flex-wrap gap-6">
           <div className="flex flex-wrap gap-6">
             <div>
               <label className="label">
@@ -108,7 +104,7 @@ export function ExerciseListPage() {
 
             <div className="ml-auto flex items-end">
               <button
-                className="btn btn-sm"
+                className="btn btn-primary btn-sm"
                 onClick={() => {
                   setDateFilter("all");
                   setCategoryFilter([]);
@@ -121,7 +117,7 @@ export function ExerciseListPage() {
         </div>
       </div>
 
-      {/* Content */}
+      
       {loading ? (
         <div className="flex items-center gap-3">
           <span className="loading loading-spinner"></span>

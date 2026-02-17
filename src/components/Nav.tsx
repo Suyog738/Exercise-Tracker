@@ -1,7 +1,8 @@
+
 const Nav = () => {
   return (
 
-    <div className="w-full bg-base-100 shadow-lg border-b border-base-300">
+    <div className=" bg-base-100 shadow-xl">
       
     
       <div className="navbar max-w-7xl mx-auto px-6 py-4">
@@ -34,21 +35,22 @@ const Nav = () => {
               <li><a>Contact</a></li>
             </ul>
           </div>
-
-          <span className="text-3xl font-bold ml-2">
-            Exercise Tracker
+        
+          <span className="text-3xl font-bold ml-2 text-sky-600">
+            Exercise <span className="text-gray-700">Tracker</span>
           </span>
+          
         </div>
 
-        {/* CENTER */}
+        
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-base">
+          <ul className="menu menu-horizontal px-1 text-base ">
             <li><a>About</a></li>
             <li><a>Contact</a></li>
           </ul>
         </div>
 
-        {/* RIGHT SIDE */}
+        
         <div className="navbar-end">
           <a className="btn bg-sky-600 text-white hover:bg-sky-700 transition px-6 border-none">
             Join us
